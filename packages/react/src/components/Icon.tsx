@@ -1,5 +1,4 @@
 import { Suspense, lazy } from 'react'
-
 type IconProps = {
   name: string
   width?: number

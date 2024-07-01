@@ -1,26 +1,54 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ],
+  /* 编译器选项配置，用于指导TypeScript如何编译代码 */
   "compilerOptions": {
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    /* 指定目标JavaScript版本，此处为ES2020 */
+    "target": "ES2020",
+    /* 在类字段上使用`defineProperty`，以保持与JavaScript的同步 */
+    "useDefineForClassFields": true,
+    /* 模块系统使用ESNext规范 */
+    "module": "ESNext",
+    /* 指定使用的库，包括ES2020、DOM和DOM.Iterable */
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    /* 跳过库的类型检查，以加快编译速度 */
+    "skipLibCheck": true,
+
+    /* Bundler mode配置 */
+    /* 使用Node.js的模块解析策略 */
+    "moduleResolution": "Node",
+    /* 允许在TS文件中直接导入.ts扩展名的文件 */
+    "allowImportingTsExtensions": true,
+    /* 支持导入JSON模块 */
+    "resolveJsonModule": true,
+    /* 每个文件单独编译，适用于 bundler */
+    "isolatedModules": true,
+    /* 不生成输出文件 */
     "noEmit": true,
-    "composite": true,
+    /* 保留JSX，不做转换 */
+    "jsx": "preserve",
+    /* 允许使用`import`语法代替CommonJS的`require` */
+    "esModuleInterop": true,
+    /* 确保文件名在不同操作系统上的大小写一致性 */
+    "forceConsistentCasingInFileNames": true,
+    /* Linting配置 */
+    /* 严格类型检查 */
+    "strict": true,
+    /* 报告未使用的局部变量 */
+    "noUnusedLocals": true,
+    /* 报告未使用的参数 */
+    "noUnusedParameters": true,
+    /* 在switch语句中，检查是否有默认分支 */
+    "noFallthroughCasesInSwitch": true,
+    /* 允许局部变量自动推断为`any`类型 */
+    "noImplicitAny": false,
+    /* 指定根目录，用于路径映射 */
     "baseUrl": ".",
+    /* 路径映射，将`@`映射到`src`目录下 */
     "paths": {
       "@/*": ["src/*"]
-    },
-    "moduleResolution": "node",
-    // 解决prettier对于装饰器语法的警告
-    "experimentalDecorators": true,
-    // 解决.jsx文件无法快速跳转的问题
-    "jsx": "preserve"
-  }
+    }
+  },
+  /* 指定需要包含编译的文件 */
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "env.d.ts"],
+  /* 引用其他tsconfig文件，此处引用了node环境的配置 */
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
