@@ -45,14 +45,10 @@
     /* 路径映射，将`@`映射到`src`目录下 */
     "paths": {
       "@/*": ["src/*"]
-    },
-    /* 生成声明文件 */
-    "declaration": true,
-    "declarationDir": "types",
+    }
   },
   /* 指定需要包含编译的文件 */
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "src/**/*.vue" ,"env.d.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "env.d.ts"],
   /* 引用其他tsconfig文件，此处引用了node环境的配置 */
-  "references": [{ "path": "./tsconfig.node.json" }],
-  "exclude": ["node_modules","lib"]
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
