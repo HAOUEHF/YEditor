@@ -1,9 +1,15 @@
 <script setup lang="ts">
-  import { Icon } from 'packages-vue'
+import { YEditor } from './index'
 </script>
 
 <template>
-  <div><Icon name="align-left"></Icon></div>
+  <div>
+    <YEditor></YEditor>
+  </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+  .text {
+    color: red;
+  }
+</style>

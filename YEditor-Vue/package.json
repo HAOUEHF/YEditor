@@ -3,13 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./lib/YEditor-Vue.umd.js",
+  "module": "./lib/YEditor-Vue.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib/*"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "vue-tsc && vite build",
+    "watch": "vite build --watch",
     "preview": "vite preview"
   },
   "dependencies": {
-    "packages-vue": "workspace:^",
     "vue": "^3.4.29"
   },
   "devDependencies": {
@@ -20,6 +26,7 @@
     "globals": "^15.8.0",
     "typescript-eslint": "^7.15.0",
     "@vitejs/plugin-vue": "^5.0.5",
-    "vue-tsc": "^2.0.21"
+    "vue-tsc": "^2.0.21",
+    "vite-svg-loader": "^5.1.0"
   }
 }

@@ -23,3 +23,11 @@ pnpm add <package_name> -w
 ```bash
 pnpm add <package_name>
 ```
+# 5.子项目互相作为依赖
+
+```bash
+pnpm add `packages中的包名` --filter <项目>
+```
+项目技术栈
+YEditor-Vue: vue3 + typescript + vite + pnpm + monorepo + eslint
+YEditor-React: react + typescript + vite + pnpm + monorepo + eslint
